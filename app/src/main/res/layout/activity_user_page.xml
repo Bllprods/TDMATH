@@ -12,17 +12,11 @@
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/fase_2"
-        tools:layout_editor_absoluteX="-178dp"
-        tools:layout_editor_absoluteY="505dp" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="67dp"
-        android:layout_height="57dp"
-        app:srcCompat="@drawable/dec_satelite"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="57dp" />
+        android:layout_marginTop="472dp"
+        android:layout_marginEnd="172dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fase_2" />
 
     <LinearLayout
         android:layout_width="344dp"
@@ -38,9 +32,23 @@
     <LinearLayout
         android:layout_width="411dp"
         android:layout_height="82dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/divs"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="67dp"
+        android:layout_height="57dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/dec_satelite"
+        tools:layout_editor_absoluteY="74dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

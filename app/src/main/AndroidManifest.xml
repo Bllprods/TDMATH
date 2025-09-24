@@ -18,9 +18,7 @@
         <activity
             android:name=".MenuFases"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
+
         <activity
             android:name=".cadastro"
             android:exported="false" />
