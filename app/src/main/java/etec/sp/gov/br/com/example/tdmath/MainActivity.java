@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref = getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
         int fontSize = sharedPref.getInt("font_size", 16);
-        config.updateFontSize(findViewById(R.id.main), fontSize-10);
+        config.updateFontSize(findViewById(R.id.main), fontSize);
 
         BtnJogar = findViewById(R.id.imgBtnJogar);
         BtnOpt = findViewById(R.id.imgBtnOpt);

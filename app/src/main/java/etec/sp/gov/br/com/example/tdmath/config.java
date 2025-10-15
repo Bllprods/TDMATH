@@ -120,7 +120,7 @@ public class config extends AppCompatActivity {
                 confirmaSave.setTitle("Confirmar?");
 
                 // definindo Mensagem
-                confirmaSave.setMessage("Deseja confirmar estás mudanças?");
+                confirmaSave.setMessage("Deseja confirmar estas mudanças?");
 
                 confirmaSave.setButton(AlertDialog.BUTTON_POSITIVE, "Sim",
                         new DialogInterface.OnClickListener() {
@@ -130,11 +130,11 @@ public class config extends AppCompatActivity {
 
                                 SharedPreferences sharedPref = getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
-                                editor.putInt("font_size", 10 + TextFont);
+                                editor.putInt("font_size", TextFont + 10);
                                 editor.apply();
 
 
-                                updateFontSize(findViewById(R.id.main), 10 + TextFont);
+                                updateFontSize(findViewById(R.id.main), TextFont);
                             }
                         });
 

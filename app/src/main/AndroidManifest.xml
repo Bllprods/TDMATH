@@ -13,12 +13,11 @@
         android:theme="@style/Theme.TDMATH"
         tools:targetApi="31">
         <activity
-            android:name=".UserPage"
-            android:exported="false" />
-        <activity
             android:name=".MenuFases"
             android:exported="false" />
-
+        <activity
+            android:name=".UserPage"
+            android:exported="false" />
         <activity
             android:name=".cadastro"
             android:exported="false" />
