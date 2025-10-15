@@ -89,23 +89,12 @@
         app:layout_constraintTop_toBottomOf="@+id/edtSenha"/>
 
     <Button
-        android:id="@+id/btnCadC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_marginTop="25dp"
         android:text="Entrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtTxtContSenha" />
-
-    <Button
-        android:id="@+id/btnVolc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="voltar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCadC" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

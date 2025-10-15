@@ -98,28 +98,33 @@
             <SeekBar
                 android:id="@+id/brTfonte"
                 android:layout_width="251dp"
-                android:layout_height="match_parent"
-                android:max="20" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnVoltar"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:text="Voltar" />
 
             <Button
                 android:id="@+id/BtnConfirmar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Confirmar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnVoltar"
@@ -144,12 +149,8 @@
         android:layout_width="96dp"
         android:layout_height="99dp"
         android:background="@drawable/icone_astronalta_foguete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.882" />
+        tools:layout_editor_absoluteX="299dp"
+        tools:layout_editor_absoluteY="542dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
