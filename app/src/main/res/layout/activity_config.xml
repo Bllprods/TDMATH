@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo"
-    tools:context=".config"
+    tools:context=".telas.Config"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="50dp">
 
@@ -124,23 +124,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnVoltar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Voltar"
-                tools:ignore="TouchTargetSizeCheck" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-        </LinearLayout>
+            android:orientation="horizontal"/>
 
 
     </LinearLayout>
@@ -148,9 +132,12 @@
     <ImageView
         android:layout_width="96dp"
         android:layout_height="99dp"
+        android:layout_marginTop="560dp"
         android:background="@drawable/icone_astronalta_foguete"
-        tools:layout_editor_absoluteX="299dp"
-        tools:layout_editor_absoluteY="542dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

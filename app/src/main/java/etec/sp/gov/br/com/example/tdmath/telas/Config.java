@@ -1,4 +1,4 @@
-package etec.sp.gov.br.com.example.tdmath;
+package etec.sp.gov.br.com.example.tdmath.telas;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -21,7 +21,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class config extends AppCompatActivity {
+import etec.sp.gov.br.com.example.tdmath.R;
+
+public class Config extends AppCompatActivity {
 
 
     int Volume, volumeAtual, maxVolumeSistema;
@@ -68,7 +70,7 @@ public class config extends AppCompatActivity {
         BtnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Voltar = new Intent(config.this, MainActivity.class);
+                Intent Voltar = new Intent(Config.this, MainActivity.class);
                 startActivity(Voltar);
             }
         });
@@ -114,7 +116,7 @@ public class config extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                AlertDialog confirmaSave = new AlertDialog.Builder(config.this).create();
+                AlertDialog confirmaSave = new AlertDialog.Builder(Config.this).create();
 
                 // definindo Titulo
                 confirmaSave.setTitle("Confirmar?");

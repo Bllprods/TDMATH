@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo"
-    tools:context=".cadastro">
+    tools:context=".telas.Cadastro">
 
     <ImageView
         android:id="@+id/imageView5"
@@ -89,12 +89,23 @@
         app:layout_constraintTop_toBottomOf="@+id/edtSenha"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCadc"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
-        android:text="Entrar"
+        android:text="Cadastrar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtTxtContSenha" />
+
+    <Button
+        android:id="@+id/btnVolt"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="92dp"
+        android:text="Voltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtTxtContSenha" />
 </androidx.constraintlayout.widget.ConstraintLayout>

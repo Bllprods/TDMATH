@@ -6,119 +6,19 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuFases"
+    tools:context=".telas.MenuFases"
     android:background="@drawable/fundo">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/containerFases"
-            android:orientation="vertical"
+            android:id="@+id/LnLm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
-
-            <!-- Cabeçalho -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mundo 1 - Floresta"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="#222"
-                android:layout_marginBottom="24dp" />
-
-            <!-- Fases (botões em forma de círculo) -->
-            <LinearLayout
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <!-- Nível 1 -->
-
-
-                <ImageButton
-                    android:id="@+id/btnFase1"
-                    android:layout_width="130dp"
-                    android:layout_height="80dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="@drawable/fase_2"
-                    android:elevation="4dp"
-                    android:text="1"
-                    android:textColor="#FFF"
-                    android:textSize="18sp"
-                    app:srcCompat="@drawable/btncircle" />
-
-
-                <!-- Nível 2 -->
-                <ImageButton
-                    android:id="@+id/btnFase2"
-                    android:layout_width="130dp"
-                    android:layout_height="80dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="@drawable/fase_2"
-                    android:elevation="4dp"
-                    android:text="2"
-                    android:textColor="#FFF"
-                    android:textSize="18sp"
-                    app:srcCompat="@drawable/btncircle" />
-
-                <!-- Nível 3 -->
-                <ImageButton
-                    android:id="@+id/btnFase3"
-                    android:layout_width="130dp"
-                    android:layout_height="80dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="@drawable/fase_2"
-                    android:elevation="4dp"
-                    android:text="3"
-                    android:textColor="#FFF"
-                    android:textSize="18sp"
-                    app:srcCompat="@drawable/btncircle" />
-                <ImageButton
-                    android:id="@+id/btnFase"
-                    android:layout_width="130dp"
-                    android:layout_height="80dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="@drawable/fase_2"
-                    android:elevation="4dp"
-                    android:text="1"
-                    android:textColor="#FFF"
-                    android:textSize="18sp"
-                    app:srcCompat="@drawable/btncircle" />
-
-
-                <!-- Nível 2 -->
-                <ImageButton
-                    android:id="@+id/btnFase5"
-                    android:layout_width="130dp"
-                    android:layout_height="80dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="@drawable/fase_2"
-                    android:elevation="4dp"
-                    android:text="2"
-                    android:textColor="#FFF"
-                    android:textSize="18sp"
-                    app:srcCompat="@drawable/btncircle" />
-
-                <!-- Nível 3 -->
-                <ImageButton
-                    android:id="@+id/btnFase6"
-                    android:layout_width="130dp"
-                    android:layout_height="80dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="@drawable/fase_2"
-                    android:elevation="4dp"
-                    android:text="3"
-                    android:textColor="#FFF"
-                    android:textSize="18sp"
-                    app:srcCompat="@drawable/btncircle" />
-            </LinearLayout>
-        </LinearLayout>
+            android:orientation="vertical" />
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,11 +41,9 @@ public class UserController {
 
         db = bd.getWritableDatabase();
         values = new ContentValues();
-        values.put("nome", nome);
-        values.put("email", email);
+        values.put("nome", nome.toLowerCase());
+        values.put("email", email.toLowerCase());
         values.put("senhaHash", senhaHash);
-
-
 
         resultado = db.insert("usuario",null,values);
         db.close();
@@ -63,7 +61,7 @@ public class UserController {
                 "nome","email", "senhaHash"
         };
         String selection = "email = ? OR nome = ?";
-        String[] selectionArgs = { user, user };
+        String[] selectionArgs = { user.toLowerCase(), user.toLowerCase() };
         db = bd.getWritableDatabase();
 
         resultado = db.query("usuario", values, selection,selectionArgs, null, null, null, null);
