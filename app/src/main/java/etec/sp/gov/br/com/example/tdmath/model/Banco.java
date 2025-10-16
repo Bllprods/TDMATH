@@ -1,13 +1,10 @@
 package etec.sp.gov.br.com.example.tdmath.model;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
-
-
 
 public class Banco extends SQLiteOpenHelper {
     //https://www.devmedia.com.br/criando-um-crud-com-android-studio-e-sqlite/32815
@@ -23,7 +20,6 @@ public class Banco extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE IF NOT EXISTS usuario(" +
                 "idUser INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "nome VARCHAR(100) NOT NULL UNIQUE," +
                 "email VARCHAR(150) NOT NULL UNIQUE," +
                 "senhaHash VARCHAR(250) NOT NULL," +
                 "pontuacaoTotal int default 0," +
@@ -75,65 +71,6 @@ public class Banco extends SQLiteOpenHelper {
                 "FOREIGN KEY (fkIdUser) REFERENCES usuario(idUser)," +
                 "FOREIGN KEY (fkIdConq) REFERENCES conquista(idConq)" +
                 ")");
-
-
-        db.beginTransaction();// permite inserções em massa
-        try {
-            ContentValues values1 = new ContentValues();
-            values1.put("nome", "somary");
-            values1.put("ImgUrlMap", "imgm1");
-            db.insert("mapa", null, values1);
-
-            ContentValues values2 = new ContentValues();
-            values2.put("nome", "subvitryl");
-            values2.put("ImgUrlMap", "imgm2");
-            db.insert("mapa", null, values2);
-
-            ContentValues values3 = new ContentValues();
-            values3.put("nome", "multil");
-            values3.put("ImgUrlMap", "imgm3");
-            db.insert("mapa", null, values3);
-
-            ContentValues values4 = new ContentValues();
-            values4.put("nome", "division");
-            values4.put("ImgUrlMap", "imgm4");
-            db.insert("mapa", null, values4);
-
-            ContentValues values5 = new ContentValues();
-            values5.put("nome", "descanso");
-            values5.put("ImgUrlMap", "imgm5");
-            db.insert("mapa", null, values5);
-
-            ContentValues values6 = new ContentValues();
-            values6.put("nome", "fract");
-            values6.put("ImgUrlMap", "imgm6");
-            db.insert("mapa", null, values6);
-
-            ContentValues values7 = new ContentValues();
-            values7.put("nome", "cortando caminhos");
-            values7.put("ImgUrlMap", "imgm7");
-            db.insert("mapa", null, values7);
-
-            ContentValues values8 = new ContentValues();
-            values8.put("nome", "prov");
-            values8.put("ImgUrlMap", "imgm8");
-            db.insert("mapa", null, values8);
-
-            ContentValues values9 = new ContentValues();
-            values9.put("nome", "dencanso");
-            values9.put("ImgUrlMap", "imgm9");
-            db.insert("mapa", null, values9);
-
-            ContentValues values10 = new ContentValues();
-            values10.put("nome", "mathworld");
-            values10.put("ImgUrlMap", "imgm10");
-            db.insert("mapa", null, values10);
-
-            db.setTransactionSuccessful(); // Marca a transação como bem-sucedida
-        } finally {
-            db.endTransaction(); // Confirma as inserções
-        }
-
     }
 
     @Override

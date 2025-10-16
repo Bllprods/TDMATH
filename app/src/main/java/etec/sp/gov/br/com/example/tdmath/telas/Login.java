@@ -5,11 +5,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,40 +48,6 @@ public class Login extends AppCompatActivity {
         int fontSize = sharedPref.getInt("font_size", 16); // 16 é o valor padrão caso ainda não tenha salvo
         Config.updateFontSize(findViewById(R.id.main), fontSize);
 
-        try {
-            try {
-                db = criabd.getReadableDatabase();
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-            String[] colunas = {"idUser", "nome", "email", "senhaHash"};
-
-            // consulta
-            Cursor cursor = db.query("usuario", colunas, null, null, null, null, null);
-
-            // não vazia
-            if (cursor.moveToFirst()) {
-                do {
-                    @SuppressLint("Range")
-                    int id = cursor.getInt(cursor.getColumnIndex("idUser"));
-                    @SuppressLint("Range")
-                    String usuario = cursor.getString(cursor.getColumnIndex("nome"));
-                    @SuppressLint("Range")
-                    String email = cursor.getString(cursor.getColumnIndex("email"));
-                    @SuppressLint("Range")
-                    String senha = cursor.getString(cursor.getColumnIndex("senhaHash"));
-                    // LogCat
-                    Log.d("banco", "ID: " + id + ", Usuário: " + usuario + ", Email: " + email + ", senha crip.: " + senha);
-                } while (cursor.moveToNext());
-            } else {
-                Log.d("banco", "Nenhum registro encontrado");
-            }
-            cursor.close();
-        } catch (Exception e) {
-            Log.e("banco", "Erro ao consultar: " + e.getMessage());
-        }
-
-        BtnLog = findViewById(R.id.btnLog);
         BtnCad = findViewById(R.id.btnCad);
         BtnVoltarL = findViewById(R.id.btnVL);
         edtSenha = findViewById(R.id.edtSenha);

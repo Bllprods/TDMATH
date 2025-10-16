@@ -43,7 +43,6 @@ public class Cadastro extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         try {
             db = criabd.getWritableDatabase();
         } catch (Exception e) {
@@ -54,8 +53,6 @@ public class Cadastro extends AppCompatActivity {
         int fontSize = sharedPref.getInt("font_size", 16);
         Config.updateFontSize(findViewById(R.id.main), fontSize);
 
-        BtnCadc = findViewById(R.id.btnCadc);
-        BtnVolc = findViewById(R.id.btnVolt);
         edtUser = findViewById(R.id.edtTxtUsername);
         edtEmail = findViewById(R.id.edtEmail);
         edtSenha = findViewById(R.id.edtSenha);
@@ -83,12 +80,6 @@ public class Cadastro extends AppCompatActivity {
                     String resultado;
                     try {
                         resultado = crud.cadastro(user, email, senha);
-                        if (resultado == "registro Inserido com sucesso"){
-                            Intent telaLogin = new Intent( Cadastro.this, Login.class);
-                            startActivity(telaLogin);
-                        } else {
-                            Toast.makeText(Cadastro.this, "Nome de Usuario ou Email já existentes!", Toast.LENGTH_SHORT).show();
-                        }
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
