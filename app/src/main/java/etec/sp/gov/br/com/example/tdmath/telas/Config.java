@@ -67,8 +67,8 @@ public class Config extends AppCompatActivity {
         TextFont = sharedPref.getInt("font_size", 25);
 
         // Atualizar a SeekBar e o TextView
-        brTfont.setMin(25);
-        brTfont.setMax(50);
+        brTfont.setMin(20);
+        brTfont.setMax(30);
         brTfont.setProgress(TextFont);
 
         BtnVoltar.setOnClickListener(new View.OnClickListener() {
