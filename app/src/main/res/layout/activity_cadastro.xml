@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
     <Button
-        android:id="@+id/btnCadc"
+        android:id="@+id/btnCadC"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@id/edtTxtContSenha" />
 
     <Button
-        android:id="@+id/btnVolt"
+        android:id="@+id/btnVolc"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="92dp"

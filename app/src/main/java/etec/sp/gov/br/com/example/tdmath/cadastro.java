@@ -18,6 +18,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import etec.sp.gov.br.com.example.tdmath.telas.Login;
+
 public class cadastro extends AppCompatActivity {
     Button BtnCadc, BtnVolc;
     EditText edtUser, edtEmail, edtSenha, edtCSenha;
