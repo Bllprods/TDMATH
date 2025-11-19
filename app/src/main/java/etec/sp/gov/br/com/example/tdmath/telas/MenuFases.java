@@ -2,6 +2,7 @@ package etec.sp.gov.br.com.example.tdmath.telas;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -61,17 +62,19 @@ public class MenuFases extends AppCompatActivity {
             LinearParams.gravity = Gravity.CENTER_HORIZONTAL;
             containerMini.setLayoutParams(LinearParams);
             containerMini.setOnClickListener(v -> {
-                AlertDialog mundo = new AlertDialog.Builder(this).create();
-                mundo.setTitle(m.getNome());
-                mundo.setMessage("este é o Mundo" + m.getNome() + "\n Imagem: " +m.getImgUrlMap());
-                mundo.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        });
-                mundo.show();
+                Intent fase = new Intent(this, tela_jogos.class);
+                startActivity(fase);
+//                AlertDialog mundo = new AlertDialog.Builder(this).create();
+//                mundo.setTitle(m.getNome());
+//                mundo.setMessage("este é o Mundo" + m.getNome() + "\n Imagem: " +m.getImgUrlMap());
+//                mundo.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+//                        new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//
+//                            }
+//                        });
+//                mundo.show();
             });
 
             ImageButton MundoBtn = new ImageButton( this);

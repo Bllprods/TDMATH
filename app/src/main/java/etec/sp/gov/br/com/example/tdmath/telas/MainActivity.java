@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import etec.sp.gov.br.com.example.tdmath.R;
+import etec.sp.gov.br.com.example.tdmath.controller.UserController;
 import etec.sp.gov.br.com.example.tdmath.model.Banco;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,10 +40,11 @@ public class MainActivity extends AppCompatActivity {
         });
         try {
             db = criabd.getWritableDatabase();
-            Toast.makeText(this, "Banco criado com sucesso!", Toast.LENGTH_SHORT).show();
+            Log.d("banco", "onCreate: Banco feito");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        UserController user = new UserController(getBaseContext());
 
         SharedPreferences sharedPref = getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
         int fontSize = sharedPref.getInt("font_size", 16);
@@ -53,8 +56,13 @@ public class MainActivity extends AppCompatActivity {
         BtnJogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent TelaJogar = new Intent(MainActivity.this, Login.class);
-                startActivity(TelaJogar);
+                if (user.existeUsuario()){
+                    Intent TelaJogar = new Intent(MainActivity.this, MenuFases.class);
+                    startActivity(TelaJogar);
+                } else {
+                    Intent TelaJogar = new Intent(MainActivity.this, Login.class);
+                    startActivity(TelaJogar);
+                }
             }
         });
         BtnOpt.setOnClickListener(new View.OnClickListener() {

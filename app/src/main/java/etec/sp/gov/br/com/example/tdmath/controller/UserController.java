@@ -21,6 +21,37 @@ public class UserController {
     public UserController(Context context) {
         bd = new Banco(context);
     }
+
+    public boolean existeUsuario() {
+        db = bd.getReadableDatabase();
+        Cursor cursor = null;
+        boolean existe = false;
+
+        try {
+            cursor = db.query(
+                    "usuario",         // tabela
+                    new String[]{"idUser"}, // só precisa de alguma coluna
+                    null,              // sem filtro, pega todos
+                    null,
+                    null,
+                    null,
+                    null,
+                    "1"                // LIMIT 1 para só verificar se existe
+            );
+
+            if (cursor.moveToFirst()) {
+                existe = true; // encontrou pelo menos 1 usuário
+            }
+        } catch (Exception e) {
+            Log.e("UserController", "Erro ao verificar usuários: " + e.getMessage());
+        } finally {
+            if (cursor != null) cursor.close();
+            db.close();
+        }
+
+        return existe;
+    }
+
     public void consultaUsers() {
         ArrayList<String> lista = new ArrayList<>();
 
