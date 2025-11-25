@@ -1,0 +1,54 @@
+
+body { font-family: sans-serif; padding: 24px; }
+  .board {
+    margin-top: 50%;
+    margin: 0 auto;
+    width: 100%;
+    height: 1000px;
+    border: 2px dashed #aaa;
+    position: relative; /* contêiner para posicionamento absoluto */
+    overflow: hidden;
+  }
+
+  #final{
+    width: 500px;
+    background: aqua;
+    height: 300px;
+    font-size: 40px;
+    text-align: center;
+     border-radius: 8px;
+     margin-top: 10%;
+     margin-left: 1%;
+     
+  }
+#final .draggable {
+  margin: 20px auto;
+  display: flex;
+  position: relative !important;
+}
+  #dentro{
+    background: wheat;
+    width: 300px;
+    height: 300px;
+  }
+
+ 
+  .draggable {
+    margin: 0 auto;
+    margin-left: 50%;
+    width: 120px;
+    height: 60px;
+    background: #46a;
+    color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 8px;
+    position: absolute; /* necessário para mover com left/top */
+    user-select: none;   /* impede seleção de texto enquanto arrasta */
+    touch-action: none;  /* importante para pointer events em touch */
+    cursor: grab;
+  }
+  .draggable:active { cursor: grabbing; }
+
+
