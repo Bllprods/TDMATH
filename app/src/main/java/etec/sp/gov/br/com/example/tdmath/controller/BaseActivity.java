@@ -60,12 +60,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-//    @Override
-//    protected void onDestroy() {// quando fechado
-//        super.onDestroy();
-//      if (mp != null) {
-//           mp.release(); // limpar cache e parar a musica
-//          mp = null;
-//      }
-//    }
+    @Override
+    protected void onDestroy() {// quando fechado
+        super.onDestroy();
+      if (mp != null) {
+           mp.release(); // limpar cache e parar a musica
+          mp = null;
+      }
+    }
 }

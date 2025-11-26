@@ -5,13 +5,14 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
 public class Banco extends SQLiteOpenHelper {
     //https://www.devmedia.com.br/criando-um-crud-com-android-studio-e-sqlite/32815
     private static final String nomeBd = "tdmath.db";
-    private static final Integer versaoBd = 2;
+    private static final Integer versaoBd = 1;
     public Banco(@Nullable Context context) {
         super(context, nomeBd, null, versaoBd);
     }
@@ -110,13 +111,13 @@ public class Banco extends SQLiteOpenHelper {
         }
     }
     private void inserirMp(SQLiteDatabase db){
-        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('soma', 'imgmap1');");
-        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('subtracao', 'imgmap2');");
-        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('multiplicacao', 'imgmap5');");
-        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('divisao', 'imgmap6');");
-        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('relacoes', 'imgmap10');");
+        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('soma', 'imgmap2');");
+        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('subtracao', 'imgmap3');");
+        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('multiplicacao', 'imgmap4');");
+        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('divisao', 'imgmap5');");
+        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('relacoes', 'imgmap6');");
         db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('geometria', 'imgmap12');");
-        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('prova', 'imgmap14');"); // revisão final
+        db.execSQL("INSERT INTO mapa(nome,ImgUrlMap) VALUES('prova', 'imgmap7');"); // revisão final
     }
     private void inserirNvs(SQLiteDatabase db){
         // o raw Query exige colocar sql como string direto para consultas mais completas
@@ -172,4 +173,37 @@ public class Banco extends SQLiteOpenHelper {
             nvs.close();
         }
     }
+    public void testarBanco() {
+        SQLiteDatabase dbRead = getReadableDatabase();
+
+        // Tabelas que queremos testar
+        String[] tabelas = {
+                "usuario", "conquista", "config", "mapa", "nivel",
+                "operacaoNivel", "progresso", "conquistaUser"
+        };
+
+        for (String tabela : tabelas) {
+            Cursor c = dbRead.rawQuery("SELECT * FROM " + tabela, null);
+            Log.d("TESTE_BD", "====== Tabela: " + tabela + " ======");
+            Log.d("TESTE_BD", "Total de linhas: " + c.getCount());
+
+            if (c.moveToFirst()) {
+                do {
+                    StringBuilder sb = new StringBuilder();
+                    for (int i = 0; i < c.getColumnCount(); i++) {
+                        sb.append(c.getColumnName(i))
+                                .append(": ")
+                                .append(c.getString(i))
+                                .append(" | ");
+                    }
+                    Log.d("TESTE_BD", sb.toString());
+                } while (c.moveToNext());
+            }
+
+            c.close();
+        }
+
+        dbRead.close();
+    }
+
 }

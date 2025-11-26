@@ -38,8 +38,6 @@ public class DadosBd {
                     int pont = cursor.getInt(1);
                     String op = cursor.getString(2);
 
-                    // Aqui você pode enviar pro JS da WebView
-                    // cada operação vira um objeto JSON
                     JSONObject obj = new JSONObject();
                     obj.put("idNivel", idNivel);
                     obj.put("operacao", op);
@@ -57,8 +55,8 @@ public class DadosBd {
         return resultado;
     }
 
-    public String dadosRec(){
-        return "foi";
+    public void dadosRec(){
+
     }
 
 }

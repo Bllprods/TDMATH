@@ -32,14 +32,14 @@ public class WebViewInterface {
     public void DadosRec(String jsonRecebido) {
         Log.d("JS_ANDROID", "Recebi do JS: " + jsonRecebido);
 
-        // Aqui você já pode converter para objeto:
+        // converter para objeto:
         try {
             JSONObject obj = new JSONObject(jsonRecebido);
             String status = obj.getString("concluido");
             String operacao  = obj.getString("operacao");
 
             if (status == "sim"){
-
+                //dds.
             }
         } catch(Exception e){
             e.printStackTrace();

@@ -19,13 +19,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import etec.sp.gov.br.com.example.tdmath.R;
+import etec.sp.gov.br.com.example.tdmath.controller.BaseActivity;
+import etec.sp.gov.br.com.example.tdmath.controller.UserController;
 import etec.sp.gov.br.com.example.tdmath.model.Banco;
 
 public class MainActivity extends BaseActivity {
 
     ImageButton BtnJogar,BtnOpt;
-    private SQLiteDatabase db;
     private Banco criabd = new Banco(this);
+    private SQLiteDatabase db;
 
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
@@ -40,6 +42,7 @@ public class MainActivity extends BaseActivity {
         });
         try {
             db = criabd.getWritableDatabase();
+            criabd.testarBanco();
             Log.d("banco", "onCreate: Banco feito");
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -55,6 +58,7 @@ public class MainActivity extends BaseActivity {
         BtnJogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                UserController user = new UserController(MainActivity.this);
                 if (user.existeUsuario()){
                     Intent TelaJogar = new Intent(MainActivity.this, MenuFases.class);
                     startActivity(TelaJogar);
