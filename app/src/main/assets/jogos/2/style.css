@@ -1,0 +1,94 @@
+body {
+  overflow: hidden;
+  background-color: gray;
+    margin: 0; 
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5e5e5e;
+    user-select: none; 
+    -webkit-user-select: none;
+    -moz-user-select: none;    
+    -ms-user-select: none;
+}
+
+#CorpoEletri{
+    height: 640px;
+    width: 400px;
+    background-image: url('ele.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#numal{
+  margin-left: 140px ;
+}
+#area {
+  position: relative;
+  width: 308px;
+  height: 290px;
+  float: right;
+  margin-top: 350px;
+}
+
+/* Área das cordas ocupando todo o espaço */
+#cordas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Container da direita */
+#con {
+  position: absolute;
+  right: 10px;      /* antes era 100px */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Estilo geral dos círculos */
+[id^="cabo"],
+[id^="jun"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;        /* reduzido para caber melhor */
+  height: 24px;
+  border-radius: 50%;
+  background-color: yellow;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Cabos à esquerda */
+[id^="cabo"] {
+  position: absolute;
+  left: 20px;        /* antes era 100px */
+}
+
+#cabo1 { top: 25%; }
+#cabo2 { top: 37%; }
+#cabo3 { top: 50%; }
+#cabo4 { top: 63%; }
+#cabo5 { top: 75%; }
+
+/* Junções na direita (dentro do #con) */
+.a {
+  margin: 12px 0;  /* ajustado para caber no espaço */
+}
+
+/* Evitar seleção de texto */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+

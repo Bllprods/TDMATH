@@ -10,27 +10,34 @@
     background-color: white;
     padding: 10px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .kanban {
     display: flex;
     justify-content: center;
-    height: 400px;
-    gap: 10;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
     padding: 10px;
 }
 
 .coluna{
-  
+    min-height: 95vh;
     display: flex;
+    justify-self: center;
+    align-self: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 5vh;
     padding: 10px;
     background-color: cadetblue;
-    width: 200px;
+    width: 20vw;
     border-radius: 5px;
 }
 
 .dragging {
-    opacity: 0.5;
+    opacity: 0.75;
 }

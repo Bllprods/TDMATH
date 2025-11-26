@@ -1,13 +1,13 @@
 // ---- LISTA DE FORMAS ----
 const formas = {
-  1: { nome: "Quadrado", arquivo: "asQ.png" },
-  2: { nome: "Triângulo ", arquivo: "asT.png" },
-  3: { nome: "Pentágono", arquivo: "asPen.png" },
-  4: { nome: "Hexágono", arquivo: "asH.png" },
-  5: { nome: "Losango", arquivo: "asL.png" },
-  6: { nome: "Paralelogramo", arquivo: "asPa.png" },
-  7: { nome: "Círculo", arquivo: "asC.png" },
-  8: { nome: "Retangulo", arquivo: "asP.png" }
+  1: { nome: "Quadrado", arquivo: "quadrado.png" },
+  2: { nome: "Triângulo ", arquivo: "triangulo.png" },
+  3: { nome: "Pentágono", arquivo: "pentagono.png" },
+  4: { nome: "Hexágono", arquivo: "hexagono.png" },
+  5: { nome: "Losango", arquivo: "losango.png" },
+  6: { nome: "Paralelogramo", arquivo: "paralelogramo.png" },
+  7: { nome: "Círculo", arquivo: "circulo.png" },
+  8: { nome: "Retangulo", arquivo: "retangulo.png" }
 };
 
 // ------------------ GERAR VERDADEIRO ------------------
@@ -102,7 +102,7 @@ draggables.forEach(el => {
 
     if (overlap) {
 
-      //❌ ERRADO
+      // ERRADO
       if (el.id !== "verdade") {
         erros++;
         alert(`Errou! Tentativas: ${erros}/3`);

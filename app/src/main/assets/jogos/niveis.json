@@ -1,0 +1,17 @@
+[
+  {
+    "idNivel": 1,
+    "operacao": "A",
+    "descricao": "Primeiro nível"
+  },
+  {
+    "idNivel": 2,
+    "operacao": "B",
+    "descricao": "Segundo nível"
+  },
+  {
+    "idNivel": 3,
+    "operacao": "C",
+    "descricao": "Terceiro nível"
+  }
+]

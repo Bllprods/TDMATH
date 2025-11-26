@@ -1,0 +1,128 @@
+body{
+    height: 640px;
+    width: 400px;
+}
+
+#CorpoPlan{
+    height: 640px;
+    width: 400px;
+    background-image: url('../img/gr.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#part1{
+    height: 256px;
+    width: 100%;
+}
+
+/* Estilos para a Força Necessária (Target) e Pontuação (Atual) */
+#fn, #Pontua{
+    width: 50%; /* Aumentado para melhor visualização */
+    /* Removendo 'solid, gray' para 'solid 1px gray' */
+    border: solid 1px gray; 
+    background-color: skyblue;
+    border-radius: 10px;
+    margin: 10px auto; /* Adicionei margem para separar visualmente */
+    text-align: center;
+    font-size: 1.2em; /* Tornando o texto um pouco maior */
+    font-weight: bold;
+    padding: 5px; /* Adicionado padding para melhor espaçamento */
+}
+
+/* Estilos para as divs que mostram os números aleatórios (N1, N2, N3) */
+.mostram{
+    /* Ajustes para garantir que o número apareça */
+    height: 31px;
+    width: 71px;
+    
+    /* Centraliza o texto vertical e horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    
+    /* Configurações de fundo */
+    background-image: url('../img/fundo-mostra.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+    /* Estilo do texto */
+    color: black; /* Certifique-se de que a cor do texto seja visível no fundo da imagem */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Estilos dos botões */
+.botoes {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    /* Ajuste de margem para alinhar o botão sob o número */
+    margin-top: 10px; 
+}
+
+/* Base branca */
+.btn-base {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background: #e9e9e9;
+    border-radius: 50%;
+    top: 40px;
+    left: 0;
+}
+
+/* Topo + corpo do botão vermelho (cilindro) */
+.btn-top {
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    background: #e64b3c;
+    border-radius: 60px / 25px; /* forma cilíndrica */
+    top: 5px;
+    left: 5px; /* Centralizando o topo no botão */
+
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
+    /* Sombra para parecer elevado */
+    box-shadow: 0 10px 0 #c0392b;
+}
+
+/* Animação ao clicar */
+.btn-top:active {
+    top: 20px;          /* desce */
+    box-shadow: 0 2px 0 #c0392b;
+}
+
+/* Contêineres dos botões/números */
+#centro, #esquerda, #direita {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    
+    /* Altera o layout para empilhar o número (div .mostram) e o botão */
+    display: flex; 
+    flex-direction: column; /* Empilha os itens verticalmente */
+    
+    /* Centraliza o conteúdo (número + botão) dentro do contêiner */
+    justify-content: flex-start; 
+    align-items: center;
+    
+    color: white; /* Cor do texto padrão (não deve afetar .mostram) */
+    border-radius: 10px;
+}
+
+/* Animação de tremer */
+.tremer {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, 5px); }
+    75% { transform: translate(5px, 5px); }
+    100% { transform: translate(0px, 0px); }
+}

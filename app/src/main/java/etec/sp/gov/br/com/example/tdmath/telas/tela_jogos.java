@@ -2,6 +2,7 @@ package etec.sp.gov.br.com.example.tdmath.telas;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -14,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import etec.sp.gov.br.com.example.tdmath.R;
+import etec.sp.gov.br.com.example.tdmath.controller.WebViewInterface;
 
 public class tela_jogos extends AppCompatActivity {
     WebView GameView;
@@ -30,14 +32,46 @@ public class tela_jogos extends AppCompatActivity {
         });
         // Pegando a referência do WebView
         GameView = findViewById(R.id.GameView);
-
         btnVoltar = findViewById(R.id.btnVoltar);
 
         WebSettings webSettings = GameView.getSettings();
         webSettings.setJavaScriptEnabled(true);// Js
         webSettings.setAllowFileAccess(true);// Acessar arquivos
         webSettings.setAllowFileAccessFromFileURLs(true);// Acessar Arquivos via Url
-        GameView.loadUrl("file:///android_asset/PerArea/pa.html");
+        WebViewInterface bridge = new WebViewInterface(this);
+        // O nome "AndroidBridge" DEVE ser o mesmo usado no script.js
+        GameView.addJavascriptInterface(bridge, "AndroidBridge");
+
+
+        int idMapa = getIntent().getIntExtra("idMapa", -1);
+        int idNivel = getIntent().getIntExtra("idNivel", -1);
+
+        switch (idMapa){
+            case 1:
+                GameView.loadUrl("file:///android_asset/jogos/1/pa.html");
+                break;
+            case 2:
+                GameView.loadUrl("file:///android_asset/jogos/2/cabo.html");
+                break;
+            case 3:
+                GameView.loadUrl("file:///android_asset/jogos/3/game1.html");
+                break;
+            case 4:
+                GameView.loadUrl("file:///android_asset/jogos/4/jogo.html");
+                break;
+            case 5:
+                GameView.loadUrl("file:///android_asset/jogos/5/pagor.html");
+                break;
+            case 6:
+                GameView.loadUrl("file:///android_asset/jogos/1/pa.html");
+                break;
+            case 7:
+                GameView.loadUrl("file:///android_asset/jogos/1/pa.html");
+                break;
+
+        }
+        Log.d("DEBUG", "ID do mapa: " + idMapa + " | ID do nível: " + idNivel);
+
 
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +81,6 @@ public class tela_jogos extends AppCompatActivity {
             }
         });
 
-
-        }
-
     }
+
+}

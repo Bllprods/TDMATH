@@ -21,28 +21,31 @@ public class WebViewInterface {
 
     public WebViewInterface(Context ct){
         this.ct = ct; // o contexto desta função é o contexto de quem chamar
+        this.dds = new DadosBd(ct);
     }
 
     @JavascriptInterface // diz que a interação é sobre a interface JS
     public void DadosNecJogos() {
-        dds = new DadosBd(ct);
         dds.dadosNec(1);
     }
     @JavascriptInterface
     public void DadosRec(String jsonRecebido) {
-        Log.d("JS_ANDROID", "Recebi do JS: " + jsonRecebido);
+        Log.d("JSON", "Recebi do JS: " + jsonRecebido);
 
         // converter para objeto:
         try {
             JSONObject obj = new JSONObject(jsonRecebido);
-            String status = obj.getString("concluido");
+            String status = obj.getString("status");
             String operacao  = obj.getString("operacao");
 
-            if (status == "sim"){
-                //dds.
+            if ("sim".equals(status)){
+                dds.dadosRec(jsonRecebido);
+            } else {
+                Log.d("JSON", "Status não concluído.");
             }
         } catch(Exception e){
-            e.printStackTrace();
+//            e.printStackTrace();
+            Log.e("JSON", "Erro ao processar JSON: " + jsonRecebido, e);
         }
     }
 

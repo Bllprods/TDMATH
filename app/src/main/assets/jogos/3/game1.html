@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mini-jogo dos foguetes</title>
+</head>
+<body>
+<div id="CorpoPlan">
+<!--As divs part1 e part2 são as telas que apareceram, a part1 tá mostrando o 3 e a força necessária,
+part 2 é a tela que mostra os números para fazer o cálculo que chegará na força necessária e a força atual-->
+    <div id="part1">
+<!--Vai ser utilizado um gif na tela part1 pra mostrar o 3 e o fn é força necessária-->
+        <div id="fn"></div>
+        <div id="Pontua"></div>
+        <div id="gif"></div>
+    </div>
+    <div id="part2">
+        <div></div>
+<!--botões e suas posições-->        
+    <div id="direita">
+        <div id="N1" class="mostram"></div>
+        <button class="botoes" type="button" onclick="Somar()" id="btn1">
+                <div class="btn-base"></div>
+                <div class="btn-top"></div>
+            </button>
+    </div>
+
+    <div id="centro">
+        <div id="N2" class="mostram"></div>
+            <button class="botoes" type="button" onclick="Subtrair()" id="btn2">
+                <div class="btn-base"></div>
+                <div class="btn-top"></div>
+            </button>
+    </div>
+
+    <div id="esquerda">
+        <div id="N3" class="mostram"></div>
+        <button class="botoes" type="button" onclick="Multiplicar()" id="btn3" >
+                <div class="btn-base"></div>
+                <div class="btn-top"></div>
+            </button>
+    </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -7,11 +7,12 @@
     <title>Mini-jogo dos foguetes</title>
 </head>
 <body>
+    <div id="volta"><a href="../selec.html">Voltar</a></div>
 <div id="CorpoPlan">
-<!--As divs part1 e part2 são as telas que apareceram, a part1 tá mostrando o foguete e a força necessária, 
+<!--As divs part1 e part2 são as telas que apareceram, a part1 tá mostrando o 3 e a força necessária,
 part 2 é a tela que mostra os números para fazer o cálculo que chegará na força necessária e a força atual-->
     <div id="part1">
-<!--Vai ser utilizado um gif na tela part1 pra mostrar o foguete e o fn é força necessária-->        
+<!--Vai ser utilizado um gif na tela part1 pra mostrar o 3 e o fn é força necessária-->
         <div id="fn"></div>
         <div id="Pontua"></div>
         <div id="gif"></div>
@@ -20,30 +21,30 @@ part 2 é a tela que mostra os números para fazer o cálculo que chegará na fo
         <div></div>
 <!--botões e suas posições-->        
     <div id="direita">
-        <div id="N1" class="mostram"></div>
+        <div id="N1" name="N1"class="mostram"></div>
         <button class="botoes" type="button" onclick="Somar()" id="btn1">
-                <div class="btn-base"></div>
-                <div class="btn-top"></div>
+                <div class="btn-base" id="btn-1"></div>
+                <div class="btn-top" id="btn-t1"></div>
             </button>
     </div>
 
     <div id="centro">
         <div id="N2" class="mostram"></div>
             <button class="botoes" type="button" onclick="Subtrair()" id="btn2">
-                <div class="btn-base"></div>
-                <div class="btn-top"></div>
+                <div class="btn-base" id="btn-2"></div>
+                <div class="btn-top" id="btn-t2"></div>
             </button>
     </div>
 
     <div id="esquerda">
         <div id="N3" class="mostram"></div>
         <button class="botoes" type="button" onclick="Multiplicar()" id="btn3" >
-                <div class="btn-base"></div>
-                <div class="btn-top"></div>
+                <div class="btn-base" id="btn-3"></div>
+                <div class="btn-top" id="btn-t3"></div>
             </button>
     </div>
     </div>
 </div>
-    <script src="script.js"></script>
+    <script src="foguete.js"></script>
 </body>
 </html>

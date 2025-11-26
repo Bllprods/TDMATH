@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class Config extends BaseActivity {
 
     int Volume, volumeAtual, maxVolumeSistema;
     int TextFont;
+    ImageView img;
     Button BtnVoltar, BtnConfirm;
     SeekBar brTfont, brAsom;
     TextView resultadoSom, resultadoText;
@@ -52,7 +54,7 @@ public class Config extends BaseActivity {
         BtnConfirm = findViewById(R.id.BtnConfirmar);
         brAsom = findViewById(R.id.brAsom);
         brTfont = findViewById(R.id.brTfonte);
-
+        img = findViewById(R.id.imageView8);
 
         resultadoSom = findViewById(R.id.resultadoSom);
         resultadoText = findViewById(R.id.resultadoText);
@@ -74,6 +76,13 @@ public class Config extends BaseActivity {
 
         updateFontSize(findViewById(R.id.main), TextFont);
 
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                brAsom.setProgress(0);
+                Volume = brAsom.getProgress();
+            }
+        });
         BtnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,7 +150,6 @@ public class Config extends BaseActivity {
                                 SharedPreferences.Editor editor = sharedPref.edit();
                                 editor.putInt("font_size", TextFont);
                                 editor.apply();
-
 
                                 updateFontSize(findViewById(R.id.main), TextFont);
                             }
